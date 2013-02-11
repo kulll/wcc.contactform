@@ -10,7 +10,7 @@
     <link rel="stylesheet" type="text/css" 
             tal:define="navroot context/@@plone_portal_state/navigation_root_url"
             tal:attributes="href
-            string:${navroot}/++resource++wcc.churches/churchbody.css"
+            string:${navroot}/++resource++wcc.contactform/contactform.css"
             />
     </metal:slot>
     <body>
@@ -33,32 +33,30 @@
             In spite of the high volume of email sent to the Council, we
                 will do our best to respond to your query.</p>
 
-            <form method="POST">
-                <div>
-                <label for="email">Email : 
-                <input type="email" name="email" required /> 
-</label>
-                </div>
-                <div>
-                <label for="name">Name : </label>
-                <input type="text" name="name" required /> 
-                </div>
-                <div>
-                <label for="city">City : </label>
-                <input type="text" name="city" required /> 
-                </div>
-                <div>
-                <label for="country">Country : </label>
-                <input type="text" name="country" required /> 
-                </div>
-                <div>
-                <label for="phone">Phone : </label>
-                <input type="text" name="phone" required /> 
-                </div>
-                <div>
+            <form id="contactform" method="POST">
+            <fieldset>
+                <legend>About You</legend>
+             <div class="prettylabel">
+                <label>Email : <input type="email" id="email" required size=50 /> </label>
+                <label>Name : <input type="text" id="name" required size=50 /> </label>
+                <label>City : <input type="text" id="city" required size=50 /> </label>
+                <label>Country : <input type="text" id="country" required size=50 /> </label>
+                <label>Phone : <input type="text" id="phone" required size=50 /></label>
+            </div>
+            </fieldset>
 
-                  <input type="submit" value="submit" />
-              </div>
+            <fieldset>
+                <legend>Your Message</legend>
+             <div class="prettylabel">
+                <label class="message">Subject : <input type="text" id="subject" required size=50/></label>
+                <label class="message">Message : <textarea cols=50 id="message" required/></label>
+            </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Submit</legend>
+                <input type="submit" value="submit" />
+            </fieldset>
             </form>
 
 

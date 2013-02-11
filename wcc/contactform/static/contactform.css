@@ -1,0 +1,28 @@
+fieldset label {
+    display: block;
+    text-align: right;
+    margin-bottom: 10px;
+}
+label.message {
+    float:left;
+    clear:both;
+    text-align:left;
+}
+
+input {
+    margin-left: 20px;
+    height: 25px;
+}
+.prettylabel textarea#message {
+    margin-left: 20px;
+    float: right;
+    width: 500px;
+    height: 300px;
+
+}
+
+fieldset div.prettylabel {
+    float:left;
+    clear:both;
+}
+
