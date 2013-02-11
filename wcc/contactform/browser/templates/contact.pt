@@ -1,0 +1,72 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+    xmlns:tal="http://xml.zope.org/namespaces/tal"
+    xmlns:metal="http://xml.zope.org/namespaces/metal"
+    xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+    lang="en"
+    metal:use-macro="context/main_template/macros/master"
+    i18n:domain="wcc.churches">
+
+    <metal:slot fill-slot="style_slot">
+    <link rel="stylesheet" type="text/css" 
+            tal:define="navroot context/@@plone_portal_state/navigation_root_url"
+            tal:attributes="href
+            string:${navroot}/++resource++wcc.churches/churchbody.css"
+            />
+    </metal:slot>
+    <body>
+
+        <metal:title fill-slot="content-title">
+        <h1>Contact WCC</h1>
+        </metal:title>
+
+        <metal:main fill-slot="content-core">
+            <metal:content-core define-macro="content-core">
+
+            <p>Before contacting WCC staff, please make sure to check the WCC
+                website's Frequently Asked Questions.
+           If you don't find the answer to your question about the World
+                Council of Churches on our site, please contact our
+                communications office via the form below.</p>
+
+            <p>Please note that the WCC is not a funding organization and
+                requests for financial assistance cannot be accommodated.
+            In spite of the high volume of email sent to the Council, we
+                will do our best to respond to your query.</p>
+
+            <form method="POST">
+                <div>
+                <label for="email">Email : 
+                <input type="email" name="email" required /> 
+</label>
+                </div>
+                <div>
+                <label for="name">Name : </label>
+                <input type="text" name="name" required /> 
+                </div>
+                <div>
+                <label for="city">City : </label>
+                <input type="text" name="city" required /> 
+                </div>
+                <div>
+                <label for="country">Country : </label>
+                <input type="text" name="country" required /> 
+                </div>
+                <div>
+                <label for="phone">Phone : </label>
+                <input type="text" name="phone" required /> 
+                </div>
+                <div>
+
+                  <input type="submit" value="submit" />
+              </div>
+            </form>
+
+
+
+
+                    </metal:content-core>
+                </metal:main>
+
+</body>
+</html>
+
