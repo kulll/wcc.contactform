@@ -14,7 +14,6 @@ class Index(grok.View):
 
     def update(self):
         data = self.request.form
-        import ipdb; ipdb.set_trace()
         if data:
             self.create_email(data)
             self.send_email()
@@ -26,8 +25,8 @@ class Index(grok.View):
         try:
             mail_host.send(
                     self.message,
-                    "anwarorchid88@gmail.com",
-                    "anwarorchid88@gmail.com",
+                    self.context.email_from_address,
+                    self.context.email_from_address,
                     self.subject,
                     charset='utf-8'
                     )
@@ -46,10 +45,10 @@ class Index(grok.View):
         self.message = """%s
 
 
-        %s
-        %s
-        %s
-        %s
-        %s
+        Email: %s
+        Name: %s
+        City: %s
+        Country: %s
+        Phone: %s
 
         """ % (original_message, email, name, city, country, phone)
