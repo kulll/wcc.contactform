@@ -9,10 +9,10 @@ label.message {
     text-align:left;
 }
 
-input {
+fieldset label input {
     margin-left: 20px;
     height: 25px;
-    width: 500px;
+    width: 300px;
 }
 div textarea#message {
     margin-left: 20px;
@@ -25,5 +25,8 @@ div textarea#message {
 fieldset div.prettylabel {
     float:left;
     clear:both;
+}
+#subject {
+    width: 500px;
 }
 
