@@ -17,6 +17,7 @@ class Index(grok.View):
         if data:
             self.create_email(data)
             self.send_email()
+            self.request.response.redirect(self.url('contact-wcc-done'))
 
     def send_email(self):
         mail_host = getToolByName(self.context, 'MailHost')
@@ -52,3 +53,10 @@ class Index(grok.View):
         Phone: %s
 
         """ % (original_message, email, name, city, country, phone)
+
+
+class Done(grok.View):
+    grok.require('zope2.View')
+    grok.context(interface.Interface)
+    grok.name('contact-wcc-done')
+    grok.template('done')
